@@ -10,7 +10,7 @@ pipeline {
                 * using `true` to allow the Pipeline to continue nonetheless
                 */
                 sh 'python3 -m unittest tes.TEST_SUITE' 
-                junit '**/target/*.xml' 
+                junit '*.xml' 
             }
         }
     }
