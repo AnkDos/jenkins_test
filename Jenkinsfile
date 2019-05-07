@@ -21,7 +21,7 @@ pipeline {
     
     post {
         always {
-            emailext body: 'A Test EMail', recipientProviders: 'hello@ankdos.me', subject: 'Test'
+            step([$class: 'Mailer', notifyEveryUnstableBuild: true, recipients: 'hello@ankdos.me', body ='try' ,sendToIndividuals: true])
         }
     }
     
