@@ -1,19 +1,24 @@
-
-
 pipeline {
-    agent any
-
-    stages {
-        stage('Test') {
+    agent any 
+    stages{
+        stage('THE FIRST STAGE') {
             steps {
-                /* `make check` returns non-zero on test failures,
-                * using `true` to allow the Pipeline to continue nonetheless
-                */
-                sh 'python3 -m unittest tes.TEST_SUITE' 
-                junit '*.xml' 
+                sh 'echo The first stage'
+            }
+        }
+        stage('here comes the testing'){
+            steps {
+                sh 'python3 -m unittest tes.TEST_SUITE'
+            }
+        }
+        stage('I am Deploying'){
+            steps{
+              sh 'echo deploying'   
             }
         }
     }
 }
-
-
+        
+            
+           
+    
