@@ -8,7 +8,7 @@ pipeline {
         }
         stage('here comes the testing'){
             steps {
-                sh 'python3 -m unittest tes.TEST_SUITE'
+                sh 'nosetests --with-xunit'
             }
         }
         stage('I am Deploying'){
