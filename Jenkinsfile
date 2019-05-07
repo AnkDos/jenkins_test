@@ -22,7 +22,7 @@ pipeline {
     post {
         always {
         
-            step([$class: 'Mailer', notifyEveryUnstableBuild: true, recipientProviders: [[$class: 'DevelopersRecipientProvider'], [$class: 'RequesterRecipientProvider']],body: '${BUILD_LOG}' ,sendToIndividuals: true])
+            step([$class: 'Mailer', notifyEveryUnstableBuild: true, recipient: 'santosh.kumar@innopark.in' ,body: '${BUILD_LOG}' ,sendToIndividuals: true])
               
         }
     }
