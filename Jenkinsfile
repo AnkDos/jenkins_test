@@ -3,7 +3,7 @@ pipeline {
     stages{
         stage('THE FIRST STAGE') {
             steps {
-                sh 'echo The first stage'
+                sh 'echo The first Stage'
             }
         }
         stage('here comes the testing'){
@@ -21,7 +21,7 @@ pipeline {
     
     post {
         always {
-           step([$class: 'Mailer', notifyEveryUnstableBuild: true, recipients: 'santosh.kumar@innopark.in',sendToIndividuals: true])           
+           step([$class: 'Mailer', recipients: 'santosh.kumar@innopark.in',sendToIndividuals: true])           
         }
     }
     
