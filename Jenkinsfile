@@ -21,7 +21,7 @@ pipeline {
     
     post {
         always {
-            steps([$class: 'Mailer', recipients: 'hello@ankdos.me', body: 'just a test'])
+            step([$class: 'Mailer', recipients: 'hello@ankdos.me', body: 'just a test'])
         }
     }
     
