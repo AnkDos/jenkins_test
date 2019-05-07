@@ -21,7 +21,8 @@ pipeline {
     
     post {
         always {
-           step([$class: 'Mailer', recipients: 'santosh.kumar@innopark.in',sendToIndividuals: true])           
+        emailext(body: '${DEFAULT_CONTENT}', mimeType: 'text/html',replyTo: '$DEFAULT_REPLYTO', subject: '${DEFAULT_SUBJECT}',to: 'santosh.kumar@innopark.in')   
+            
         }
     }
     
