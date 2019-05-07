@@ -1,5 +1,5 @@
 import unittest 
-from faulty import Faulty
+from .faulty import Faulty
   
 class SimpleTest(unittest.TestCase): 
   
