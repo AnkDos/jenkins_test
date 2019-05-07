@@ -21,7 +21,9 @@ pipeline {
     
     post {
         always {
-        emailext(body: '${DEFAULT_CONTENT}', mimeType: 'text/html',replyTo: '$DEFAULT_REPLYTO', subject: '${DEFAULT_SUBJECT}',to: 'santosh.kumar@innopark.in')   
+        
+      emailext body: '${BUILD_LOG, maxLines=9999, escapeHtml=false}' , recipientProviders: [[$class: 'DevelopersRecipientProvider'], [$class: 'RequesterRecipientProvider']], subject: 'Test'      
+            
             
         }
     }
