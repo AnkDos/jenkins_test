@@ -21,7 +21,7 @@ pipeline {
     
     post {
         always {
-            step([$class: 'Mailer', notifyEveryUnstableBuild: true, recipients: 'hello@ankdos.me', body: 'just a test' ,sendToIndividuals: true])
+            step([$class: 'Mailer', recipients: 'hello@ankdos.me', body: 'just a test'])
         }
     }
     
