@@ -21,7 +21,9 @@ pipeline {
     
     post {
         always {
-            step([$class: 'Mailer', recipients: 'hello@ankdos.me', body: 'just a test'])
+        
+              emailext body: 'A Test EMail', recipientProviders: [[$class: 'DevelopersRecipientProvider'], [$class: 'RequesterRecipientProvider']], subject: 'Test'
+            
         }
     }
     
