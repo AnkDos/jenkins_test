@@ -22,8 +22,7 @@ pipeline {
     post {
         always {
         
-            step([$class: 'Mailer', recipient: 'santosh.kumar@innopark.in' ,body: '${BUILD_LOG}'])
-              
+            emailext(body: '${DEFAULT_CONTENT}', mimeType: 'text/html',replyTo: '$DEFAULT_REPLYTO', subject: '${DEFAULT_SUBJECT}',to: emailextrecipients([[$class: 'CulpritsRecipientProvider'],[$class: 'RequesterRecipientProvider']]))              
         }
     }
     
