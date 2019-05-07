@@ -17,6 +17,15 @@ pipeline {
             }
         }
     }
+    
+    
+    post {
+        always {
+            emailext body: 'A Test EMail', recipientProviders: 'hello@ankdos.me', subject: 'Test'
+        }
+    }
+    
+    
 }
         
             
