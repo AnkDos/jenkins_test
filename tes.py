@@ -6,3 +6,4 @@ TEST_SUITE = LOADER.discover(".")
 
 #bump2
 #44
+#testing auto build
