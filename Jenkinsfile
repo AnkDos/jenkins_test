@@ -23,7 +23,7 @@ pipeline {
         always {
         
       emailext attachLog: true , body: '${BUILD_LOG, maxLines=9999, escapeHtml=false}' , to: '$DEFAULT_RECIPIENTS', subject: 'Test'      
-      juint 'nosetests.xml'       
+      junit 'nosetests.xml'       
             
         }
     }
